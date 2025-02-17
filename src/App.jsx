@@ -1,16 +1,21 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Register from './pages/auth/register/Register'
+import Login from './pages/auth/login/Login'
+import UserProfile from './pages/auth/userProfile/UserProfile'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-    <div>
-      Bantu
-    </div>
+    <BrowserRouter>
+      <Routes>
+      <Route path='/register' element={<Register />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/userprofile' element={<UserProfile />} />
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
